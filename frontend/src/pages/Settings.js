@@ -4,7 +4,18 @@ import { ThemeContext } from '../context/ThemeContext';
 import FormInput from '../components/common/Form/FormInput';
 import Button from '../components/common/Button/Button';
 import toast from 'react-hot-toast';
-import { FaUser, FaBell, FaShield, FaPalette, FaLanguage, FaSave } from 'react-icons/fa';
+import { 
+  FaUser, 
+  FaBell, 
+  FaShieldAlt, 
+  FaPalette, 
+  FaLanguage, 
+  FaSave,
+  FaLock,
+  FaEnvelope,
+  FaPhone,
+  FaGlobe
+} from 'react-icons/fa';
 import './Settings.css';
 
 const Settings = () => {
@@ -73,10 +84,10 @@ const Settings = () => {
 
   const tabs = [
     { id: 'profile', label: 'Profile', icon: <FaUser /> },
-    { id: 'security', label: 'Security', icon: <FaShield /> },
+    { id: 'security', label: 'Security', icon: <FaLock /> },
     { id: 'notifications', label: 'Notifications', icon: <FaBell /> },
     { id: 'appearance', label: 'Appearance', icon: <FaPalette /> },
-    { id: 'language', label: 'Language', icon: <FaLanguage /> },
+    { id: 'language', label: 'Language', icon: <FaGlobe /> },
   ];
 
   return (
@@ -119,28 +130,34 @@ const Settings = () => {
               <h3>Profile Information</h3>
               <form onSubmit={handleProfileSubmit}>
                 <div className="form-grid">
-                  <FormInput
-                    label="Full Name"
-                    type="text"
-                    name="name"
-                    value={profileData.name}
-                    onChange={handleProfileChange}
-                    required
-                  />
-                  <FormInput
-                    label="Email Address"
-                    type="email"
-                    name="email"
-                    value={profileData.email}
-                    onChange={handleProfileChange}
-                  />
-                  <FormInput
-                    label="Phone Number"
-                    type="tel"
-                    name="phone"
-                    value={profileData.phone}
-                    onChange={handleProfileChange}
-                  />
+                  <div className="form-group">
+                    <FormInput
+                      label="Full Name"
+                      type="text"
+                      name="name"
+                      value={profileData.name}
+                      onChange={handleProfileChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <FormInput
+                      label="Email Address"
+                      type="email"
+                      name="email"
+                      value={profileData.email}
+                      onChange={handleProfileChange}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <FormInput
+                      label="Phone Number"
+                      type="tel"
+                      name="phone"
+                      value={profileData.phone}
+                      onChange={handleProfileChange}
+                    />
+                  </div>
                 </div>
                 <div className="form-actions">
                   <Button type="submit" variant="primary">
@@ -157,35 +174,41 @@ const Settings = () => {
               <h3>Change Password</h3>
               <form onSubmit={handlePasswordSubmit}>
                 <div className="form-grid">
-                  <FormInput
-                    label="Current Password"
-                    type="password"
-                    name="currentPassword"
-                    value={passwordData.currentPassword}
-                    onChange={handlePasswordChange}
-                    required
-                  />
-                  <FormInput
-                    label="New Password"
-                    type="password"
-                    name="newPassword"
-                    value={passwordData.newPassword}
-                    onChange={handlePasswordChange}
-                    required
-                    helperText="Minimum 8 characters with at least one uppercase letter, one lowercase letter, and one number"
-                  />
-                  <FormInput
-                    label="Confirm New Password"
-                    type="password"
-                    name="confirmPassword"
-                    value={passwordData.confirmPassword}
-                    onChange={handlePasswordChange}
-                    required
-                  />
+                  <div className="form-group">
+                    <FormInput
+                      label="Current Password"
+                      type="password"
+                      name="currentPassword"
+                      value={passwordData.currentPassword}
+                      onChange={handlePasswordChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <FormInput
+                      label="New Password"
+                      type="password"
+                      name="newPassword"
+                      value={passwordData.newPassword}
+                      onChange={handlePasswordChange}
+                      required
+                      helperText="Minimum 8 characters with at least one uppercase letter, one lowercase letter, and one number"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <FormInput
+                      label="Confirm New Password"
+                      type="password"
+                      name="confirmPassword"
+                      value={passwordData.confirmPassword}
+                      onChange={handlePasswordChange}
+                      required
+                    />
+                  </div>
                 </div>
                 <div className="form-actions">
                   <Button type="submit" variant="primary">
-                    Change Password
+                    <FaSave /> Change Password
                   </Button>
                 </div>
               </form>
@@ -265,7 +288,7 @@ const Settings = () => {
 
                 <div className="form-actions">
                   <Button type="submit" variant="primary">
-                    Save Preferences
+                    <FaSave /> Save Preferences
                   </Button>
                 </div>
               </form>
@@ -330,7 +353,7 @@ const Settings = () => {
               </div>
               <div className="form-actions">
                 <Button variant="primary">
-                  Save Language Preference
+                  <FaSave /> Save Language Preference
                 </Button>
               </div>
             </div>

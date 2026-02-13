@@ -1,0 +1,225 @@
+.check-in-out {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.attendance-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.attendance-header {
+  padding: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.attendance-header h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.current-time {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.attendance-status {
+  padding: 24px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.status-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #212529;
+}
+
+.time-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 32px 0;
+}
+
+.time-box {
+  text-align: center;
+  min-width: 120px;
+}
+
+.time-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+.time-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff;
+  font-family: 'Courier New', monospace;
+}
+
+.time-separator {
+  font-size: 1.5rem;
+  color: #6c757d;
+  font-weight: 300;
+}
+
+.status-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.status-badge {
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.present {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.late {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.absent {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-badge.half-day {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.late-info,
+.overtime-info {
+  font-size: 0.9rem;
+  color: #6c757d;
+  padding: 4px 12px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.attendance-controls {
+  padding: 24px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.notes-input {
+  margin-bottom: 24px;
+}
+
+.notes-input label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.notes-input textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.notes-input textarea:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.attendance-rules {
+  padding: 24px;
+  background-color: #f8f9fa;
+}
+
+.attendance-rules h4 {
+  margin: 0 0 16px 0;
+  color: #495057;
+}
+
+.attendance-rules ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #6c757d;
+}
+
+.attendance-rules li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .attendance-header,
+  .attendance-status,
+  .attendance-controls,
+  .attendance-rules {
+    padding: 16px;
+  }
+  
+  .status-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .time-display {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .time-separator {
+    transform: rotate(90deg);
+  }
+  
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+}
